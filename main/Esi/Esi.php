@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Main\Esi;
-
 
 use GuzzleHttp\Client;
 
@@ -19,17 +17,15 @@ class Esi
 
     public function getCharacter(int $id): array
     {
-        $res = $this->client->request('GET', $this->uri . "characters/$id" . $this->source);
+        $res = $this->client->request('GET', $this->uri."characters/$id".$this->source);
 
         return json_decode($res->getBody(), true);
     }
 
     public function getKillmailHash(int $killmailId, string $hash): array
     {
-        $res = $this->client->request('GET', $this->uri . "killmails/$killmailId/$hash" . $this->source);
+        $res = $this->client->request('GET', $this->uri."killmails/$killmailId/$hash".$this->source);
 
         return json_decode($res->getBody(), true);
     }
-
-
 }

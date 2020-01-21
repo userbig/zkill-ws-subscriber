@@ -1,7 +1,7 @@
 <?php
 
 //add your subs here
-return array(
+return [
     'killstream' => '{"action":"sub","channel":"killstream"}',
-    'pub' => '{"action":"sub","channel":"public"}',
-);
+    'pub'        => '{"action":"sub","channel":"public"}',
+];

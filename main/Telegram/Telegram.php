@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Main\Telegram;
-
 
 use Telegram\Bot\Api;
 
@@ -18,9 +16,9 @@ class Telegram
     public function sendSub($data, $sub): void
     {
         $response = $this->telegram->sendMessage([
-            'chat_id' => $sub->chat_id,
+            'chat_id'    => $sub->chat_id,
             'parse_mode' => 'markdown',
-            'text' => '' . PHP_EOL . '[Check this](https://zkillboard.com/kill/' . $data->killmail_id . ')'
+            'text'       => ''.PHP_EOL.'[Check this](https://zkillboard.com/kill/'.$data->killmail_id.')',
         ]);
     }
 }

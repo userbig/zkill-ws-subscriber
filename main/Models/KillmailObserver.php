@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Main\Models;
 
 use Main\Telegram\Telegram;
@@ -9,7 +8,6 @@ use SplSubject;
 
 class KillmailObserver implements SplObserver
 {
-
     public function update(SplSubject $subject)
     {
         $subArray = $this->subscriberBuilder($subject);
@@ -18,7 +16,6 @@ class KillmailObserver implements SplObserver
         foreach ($subs as $sub) {
             (new Telegram())->sendSub($subject, $sub);
         }
-
     }
 
     private function subscriberBuilder($data)
@@ -26,7 +23,6 @@ class KillmailObserver implements SplObserver
         $array = [];
 
         $attackers = json_decode($data->attackers, true);
-
 
         foreach ($attackers as $attacker) {
             if (isset($attacker['alliance_id'])) {
@@ -44,7 +40,6 @@ class KillmailObserver implements SplObserver
             $array[] = "attackers:ship_type_id:{$attacker['ship_type_id']}";
         }
 
-
         $victim = json_decode($data->victim, true);
 
         if (isset($victim['alliance_id'])) {
@@ -61,5 +56,4 @@ class KillmailObserver implements SplObserver
 
         return $array;
     }
-
 }

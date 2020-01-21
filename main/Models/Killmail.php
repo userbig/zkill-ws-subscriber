@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Main\Models;
-
 
 use SplObjectStorage;
 use SplObserver;
@@ -18,7 +16,7 @@ class Killmail extends BaseModel implements SplSubject
         'solar_system_id',
         'war_id',
         'victim_id',
-        'hash'
+        'hash',
     ];
 
     protected $table = 'killmails';
@@ -26,7 +24,6 @@ class Killmail extends BaseModel implements SplSubject
     protected $primaryKey = 'killmail_id';
 
     private $observers;
-
 
     public function __construct()
     {
@@ -43,7 +40,6 @@ class Killmail extends BaseModel implements SplSubject
 
     public function findOrCreate(array $array)
     {
-
         $result = pg_query("select * from {$this->table} where {$this->primaryKey} = {$array['killmail_id']} limit 1");
         $rows = pg_fetch_all($result);
         $this->appendAttributes($array);
@@ -74,5 +70,4 @@ class Killmail extends BaseModel implements SplSubject
         // TODO: Implement detach() method.
         $this->observers->detach($observer);
     }
-
 }

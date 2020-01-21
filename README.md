@@ -5,7 +5,7 @@ and pushing kill mails to TELEGRAM channels by having [events](/#events) related
 
 ## Requirements
 
-- PHP-ZTS =>7.3.2
+- PHP =>7.3.2
 - PostgreSQL
 
 ## Installation

@@ -1,12 +1,9 @@
 <?php
 
-
 namespace Main\Models;
-
 
 class BaseModel
 {
-
     protected $connection;
 
     public function __construct(array $attributes = [])
@@ -26,7 +23,7 @@ class BaseModel
 
     public function newInstance(array $attributes = [])
     {
-        $model = new static((array)$attributes);
+        $model = new static((array) $attributes);
 
         return $model;
     }

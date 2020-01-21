@@ -1,0 +1,21 @@
+{
+    "name": "userbig/arat",
+    "require": {
+        "php": "7.3.2",
+        "guzzlehttp/guzzle": "^6.5",
+        "symfony/var-dumper": "^5.0",
+        "react/event-loop": "^1.1",
+        "react/http": "^0.8.5",
+        "ratchet/pawl": "^0.3.4",
+        "monolog/monolog": "^2.0",
+        "vlucas/phpdotenv": "^4.1",
+        "ext-pgsql": "*",
+        "ext-json": "*",
+        "irazasyed/telegram-bot-sdk": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Main\\": "main/"
+        }
+    }
+}
